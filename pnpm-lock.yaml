@@ -7,6 +7,7 @@ specifiers:
   '@testing-library/user-event': ^14.4.3
   '@testing-library/vue': ^6.6.1
   '@types/jsdom': ^20.0.0
+  '@types/lodash-es': ^4.17.6
   '@types/node': ^16.11.56
   '@types/testing-library__jest-dom': ^5.14.5
   '@vitejs/plugin-vue': ^3.0.3
@@ -19,6 +20,7 @@ specifiers:
   eslint: ^8.22.0
   eslint-plugin-vue: ^9.3.0
   jsdom: ^20.0.0
+  lodash-es: ^4.17.21
   npm-run-all: ^4.1.5
   postcss-nesting: ^10.2.0
   prettier: ^2.7.1
@@ -32,6 +34,7 @@ specifiers:
   vue-tsc: ^0.40.7
 
 dependencies:
+  lodash-es: 4.17.21
   vue: 3.2.41
   vue-router: 4.1.5_vue@3.2.41
 
@@ -42,6 +45,7 @@ devDependencies:
   '@testing-library/user-event': 14.4.3
   '@testing-library/vue': 6.6.1_vue@3.2.41
   '@types/jsdom': 20.0.0
+  '@types/lodash-es': 4.17.6
   '@types/node': 16.11.68
   '@types/testing-library__jest-dom': 5.14.5
   '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
@@ -671,6 +675,16 @@ packages:
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
+    dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.186
+    dev: true
+
+  /@types/lodash/4.14.186:
+    resolution: {integrity: sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==}
     dev: true
 
   /@types/node/16.11.68:
@@ -2701,6 +2715,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}

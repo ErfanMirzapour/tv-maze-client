@@ -1,6 +1,6 @@
 enum Endpoints {
    SHOWS = '/shows',
-   SEARCH = '/search',
+   SEARCH = '/search/shows',
 }
 
 export default Endpoints;
