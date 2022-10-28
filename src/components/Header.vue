@@ -8,6 +8,8 @@ const showBack = computed(() => route.name === 'show');
 </script>
 
 <template>
-   <h1>header</h1>
-   <RouterLink v-if="showBack" :to="{ name: 'home' }">back</RouterLink>
+   <header>
+      <h1>header</h1>
+      <RouterLink v-if="showBack" :to="{ name: 'home' }">back</RouterLink>
+   </header>
 </template>

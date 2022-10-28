@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
 import Endpoints from '@/endpoints';
 import { fetch } from '@/utils';
-import { useRoute } from 'vue-router';
 
 const route = useRoute();
 

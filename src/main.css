@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --white: #ffffff;
   --black: #181818;
@@ -27,6 +31,7 @@
   box-sizing: border-box;
   margin: 0;
   position: relative;
+  border: 0 solid var(--black);
 }
 
 body {
