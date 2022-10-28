@@ -10,12 +10,19 @@ const showSearch = computed(() => route.name !== 'search');
 </script>
 
 <template>
-   <header class="py-6 shadow-lg fixed inset-0 bottom-auto bg-white z-10">
+   <header
+      class="py-6 shadow-lg fixed inset-0 bottom-auto bg-white z-10 dark:bg-zinc-800"
+   >
       <nav class="flex container mx-auto px-6">
-         <RouterLink v-if="showBack" :to="{ name: 'home' }">
+         <RouterLink v-if="showBack" :to="{ name: 'home' }" aria-label="Back">
             <ArrowLeft />
          </RouterLink>
-         <RouterLink v-if="showSearch" :to="{ name: 'search' }" class="ml-auto">
+         <RouterLink
+            v-if="showSearch"
+            :to="{ name: 'search' }"
+            class="ml-auto"
+            aria-label="Search"
+         >
             <Magnifier class="mt-1" />
          </RouterLink>
       </nav>

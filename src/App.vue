@@ -18,10 +18,10 @@ const refresh = () => {
    <Header />
    <RouterView v-slot="{ Component }" class="mt-28 mb-6 container px-6 mx-auto">
       <template v-if="Component">
-         <template v-if="errorMessage">
-            <span>{{ errorMessage }}</span>
-            <button @click="refresh">Refresh</button>
-         </template>
+         <div v-if="errorMessage" class="h-screen place-content-center grid">
+            <span class="text-red">{{ errorMessage }}</span>
+            <button @click="refresh" class="underline">Refresh</button>
+         </div>
 
          <Suspense v-else :timeout="0">
             <template #fallback> Loading... </template>

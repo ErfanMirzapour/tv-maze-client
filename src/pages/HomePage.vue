@@ -35,7 +35,7 @@ watch(
       </ul>
 
       <footer
-         class="fixed inset-0 top-auto bg-white z-10 shadow-2xl py-4 flex justify-center"
+         class="fixed inset-0 top-auto bg-white dark:bg-zinc-800 z-10 shadow-2xl py-4 flex justify-center"
       >
          <Pagination :pages-count="10" />
       </footer>

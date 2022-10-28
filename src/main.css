@@ -37,6 +37,7 @@
 
 body {
   min-height: 100vh;
+  display: flow-root;
   color: var(--color-text);
   background: var(--color-background);
   line-height: 1.6;
