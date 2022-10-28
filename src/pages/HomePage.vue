@@ -30,7 +30,7 @@ watch(
 </script>
 
 <template>
-   <main>
+   <main class="static">
       <span v-if="loading">Loading inside...</span>
       <ul v-else>
          <li v-for="show in shows" :key="show.id">
@@ -40,6 +40,10 @@ watch(
          </li>
       </ul>
 
-      <Pagination :pages-count="10" />
+      <footer
+         class="fixed inset-0 top-auto bg-white z-10 shadow-2xl py-4 flex justify-center"
+      >
+         <Pagination :pages-count="10" />
+      </footer>
    </main>
 </template>
