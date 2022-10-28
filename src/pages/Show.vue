@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import Endpoints from '@/endpoints';
-import { fetch } from '@/utils';
+import { fetchPlus } from '@/utils';
+import type { Show } from '@/types';
 
 const route = useRoute();
 
-const response = await fetch(`${Endpoints.SHOWS}/${route.params.showId}`);
-const show = await response.json();
-// });
+const show: Show = await fetchPlus(`${Endpoints.SHOWS}/${route.params.showId}`);
 </script>
 
 <template>

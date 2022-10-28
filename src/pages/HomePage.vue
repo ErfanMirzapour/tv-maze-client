@@ -3,17 +3,10 @@ import { ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import Endpoints from '@/endpoints';
 import { Pagination } from '@/components';
-import { fetch } from '@/utils';
+import { fetchPlus } from '@/utils';
 import type { Show } from '@/types';
 
-const fetchShows = (page = '1') =>
-   fetch(`${Endpoints.SHOWS}?page=${page}`).then(async res => {
-      console.time('Deserializing data');
-      const json = await res.json();
-      console.timeEnd('Deserializing data');
-
-      return json;
-   });
+const fetchShows = (page = '1') => fetchPlus(`${Endpoints.SHOWS}?page=${page}`);
 
 const loading = ref(false);
 const shows = ref<Show[]>(await fetchShows());

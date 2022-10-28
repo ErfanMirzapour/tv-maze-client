@@ -3,7 +3,7 @@ import { onMounted, ref, watch } from 'vue';
 import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { debounce } from 'lodash-es';
 import Endpoints from '@/endpoints';
-import { fetch } from '@/utils';
+import { fetchPlus } from '@/utils';
 import type { Show } from '@/types';
 
 const inputRef = ref<HTMLInputElement>();
@@ -24,7 +24,7 @@ const search = debounce(
       if (!q) return;
 
       try {
-         shows.value = await fetch(`${Endpoints.SEARCH}?q=${q}`);
+         shows.value = await fetchPlus(`${Endpoints.SEARCH}?q=${q}`);
       } finally {
          loading.value = false;
       }
