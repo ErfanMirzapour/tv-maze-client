@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { ChevronLeft, MenuDot } from './icons';
 
 const props = withDefaults(
    defineProps<{
@@ -73,7 +74,7 @@ const pages = computed(() =>
          class="pagination-item border-none mr-1"
          @click="$emit('page', quickNavigation.prev.query[queryParam])"
       >
-         &lt;
+         <ChevronLeft class="shrink-0" />
       </RouterLink>
 
       <template v-if="pages[0].pageNum !== 1">
@@ -90,7 +91,7 @@ const pages = computed(() =>
             class="pagination-item mr-2 border-none pointer-events-none lg-only"
             aria-hidden
          >
-            ...
+            <MenuDot class="shrink-0" />
          </div>
       </template>
 
@@ -126,7 +127,7 @@ const pages = computed(() =>
             class="pagination-item lg-only ml-2 border-none pointer-events-none"
             aria-hidden
          >
-            ...
+            <MenuDot class="shrink-0" />
          </div>
          <RouterLink
             :to="{ query: { ...route.query, [queryParam]: pagesCount } }"
@@ -142,10 +143,10 @@ const pages = computed(() =>
          v-if="currentPage < pagesCount"
          :to="quickNavigation.next"
          aria-label="Go to next page"
-         class="pagination-item border-none ml-1"
+         class="pagination-item border-none ml-1 py-0"
          @click="$emit('page', quickNavigation.next.query[queryParam])"
       >
-         &gt;
+         <ChevronLeft class="shrink-0 rotate-180" />
       </RouterLink>
    </nav>
 </template>
