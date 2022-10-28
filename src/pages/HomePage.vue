@@ -4,6 +4,7 @@ import { RouterLink, useRoute } from 'vue-router';
 import Endpoints from '@/endpoints';
 import { Pagination } from '@/components';
 import { fetch } from '@/utils';
+import type { Show } from '@/types';
 
 const fetchShows = (page = '1') =>
    fetch(`${Endpoints.SHOWS}?page=${page}`).then(async res => {
@@ -15,7 +16,7 @@ const fetchShows = (page = '1') =>
    });
 
 const loading = ref(false);
-const shows = ref(await fetchShows());
+const shows = ref<Show[]>(await fetchShows());
 
 const route = useRoute();
 

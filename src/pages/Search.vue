@@ -4,6 +4,7 @@ import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { debounce } from 'lodash-es';
 import Endpoints from '@/endpoints';
 import { fetch } from '@/utils';
+import type { Show } from '@/types';
 
 const inputRef = ref<HTMLInputElement>();
 
@@ -16,7 +17,7 @@ const router = useRouter();
 
 const loading = ref(false);
 
-const shows = ref([]);
+const shows = ref<Show[]>([]);
 
 const search = debounce(
    async (q?: string) => {
