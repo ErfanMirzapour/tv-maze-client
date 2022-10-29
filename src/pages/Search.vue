@@ -2,6 +2,7 @@
 import { onMounted, ref, watch } from 'vue';
 import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { debounce } from 'lodash-es';
+
 import Endpoints from '@/endpoints';
 import { fetchPlus } from '@/utils';
 import type { SearchResult } from '@/types';

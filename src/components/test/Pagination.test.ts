@@ -1,5 +1,6 @@
 import { render } from '@testing-library/vue';
 import { routerKey, routeLocationKey, RouterLink } from 'vue-router';
+
 import Pagination from '../Pagination.vue';
 
 const renderPagination = (props?: any, currentPage = 1) =>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
+
 import Endpoints from '@/endpoints';
 import { Pagination } from '@/components';
 import { fetchPlus } from '@/utils';

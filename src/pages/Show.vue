@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+
 import Endpoints from '@/endpoints';
 import { fetchPlus } from '@/utils';
 import type { Show } from '@/types';

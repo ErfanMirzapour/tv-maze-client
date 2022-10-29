@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onErrorCaptured, ref } from 'vue';
 import { RouterView } from 'vue-router';
+
 import { Header } from '@/components';
 
 const errorMessage = ref<string | null>(null);
