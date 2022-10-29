@@ -6,6 +6,7 @@ import { debounce } from 'lodash-es';
 import Endpoints from '@/endpoints';
 import { fetchPlus } from '@/utils';
 import type { SearchResult } from '@/types';
+import { ShowList } from '@/components';
 
 const inputRef = ref<HTMLInputElement>();
 
@@ -57,19 +58,13 @@ watch(
          "
          aria-label="Search: "
          placeholder="Type part of a title..."
-         class="py-2 border rounded-xl px-4 w-80 max-w-full outline-none focus:border-blue-600 transition-colors mx-auto block"
+         class="py-2 border rounded-xl px-4 w-80 max-w-full outline-none focus:border-blue-600 transition-colors mx-auto block mb-8"
       />
 
       <template v-if="route.query.q">
          <span v-if="loading">Loading inside...</span>
          <span v-else-if="!shows.length">There's no matching for this!</span>
-         <ul v-else>
-            <li v-for="{ show } in shows" :key="show.id">
-               <RouterLink :to="{ name: 'show', params: { showId: show.id } }">
-                  {{ show.name }}
-               </RouterLink>
-            </li>
-         </ul>
+         <ShowList v-else :shows="shows.map(show => show.show)" />
       </template>
    </main>
 </template>

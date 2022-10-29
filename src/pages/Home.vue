@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 import Endpoints from '@/endpoints';
-import { Pagination } from '@/components';
+import { Pagination, ShowList } from '@/components';
 import { fetchPlus } from '@/utils';
 import type { Show } from '@/types';
 
@@ -27,13 +27,7 @@ watch(
 <template>
    <main class="static">
       <span v-if="loading">Loading inside...</span>
-      <ul v-else>
-         <li v-for="show in shows" :key="show.id">
-            <RouterLink :to="{ name: 'show', params: { showId: show.id } }">
-               {{ show.name }}
-            </RouterLink>
-         </li>
-      </ul>
+      <ShowList v-else :shows="shows" />
 
       <footer
          class="fixed inset-0 top-auto bg-white dark:bg-zinc-800 z-10 shadow-2xl py-4 flex justify-center"

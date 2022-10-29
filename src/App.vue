@@ -17,7 +17,10 @@ const refresh = () => {
 
 <template>
    <Header />
-   <RouterView v-slot="{ Component }" class="mt-28 mb-6 container px-6 mx-auto">
+   <RouterView
+      v-slot="{ Component }"
+      class="mt-28 mb-20 container px-6 mx-auto"
+   >
       <template v-if="Component">
          <div v-if="errorMessage" class="h-screen place-content-center grid">
             <span class="text-red">{{ errorMessage }}</span>
