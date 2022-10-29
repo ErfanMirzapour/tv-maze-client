@@ -5,7 +5,7 @@ import { ArrowLeft, Magnifier } from './icons';
 
 const route = useRoute();
 
-const showBack = computed(() => route.name !== 'home');
+// const showBack = computed(() => route.name !== 'home');
 const showSearch = computed(() => route.name !== 'search');
 </script>
 
@@ -14,8 +14,13 @@ const showSearch = computed(() => route.name !== 'search');
       class="py-6 shadow-lg fixed inset-0 bottom-auto bg-white z-10 dark:bg-zinc-800"
    >
       <nav class="flex container mx-auto px-6">
-         <RouterLink v-if="showBack" :to="{ name: 'home' }" aria-label="Back">
-            <ArrowLeft />
+         <RouterLink :to="{ name: 'home' }" aria-label="Back">
+            <img
+               src="https://static.tvmaze.com/images/tvm-header-logo.png"
+               alt="Logo"
+               class="h-8"
+            />
+            <!-- <ArrowLeft /> -->
          </RouterLink>
          <RouterLink
             v-if="showSearch"
