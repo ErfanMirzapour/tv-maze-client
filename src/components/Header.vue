@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 
-import {  Magnifier } from './icons';
+import { Magnifier } from './icons';
 
 const route = useRoute();
 
