@@ -28,12 +28,12 @@ const years = computed(() => {
    <article class="flex">
       <RouterLink
          :to="{ name: 'show', params: { showId: show.id } }"
-         class="inline-block"
+         class="inline-block mr-3 shrink-0"
       >
          <img
             :src="show.image?.medium"
             alt=""
-            class="h-64 object-cover mr-3 hover:blur-[2px] transition"
+            class="h-56 md:h-64 object-cover hover:blur-[2px] transition"
          />
       </RouterLink>
 

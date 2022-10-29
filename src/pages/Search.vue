@@ -58,7 +58,7 @@ watch(
          "
          aria-label="Search: "
          placeholder="Type part of a title..."
-         class="py-2 border rounded-xl px-4 w-80 max-w-full outline-none focus:border-blue-600 transition-colors mx-auto block mb-8"
+         class="py-2 border rounded-xl px-4 w-80 max-w-full outline-none focus:border-blue-600 transition-colors mx-auto block mb-8 [color-scheme:light_dark]"
       />
 
       <template v-if="route.query.q">
