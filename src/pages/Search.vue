@@ -4,7 +4,7 @@ import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { debounce } from 'lodash-es';
 import Endpoints from '@/endpoints';
 import { fetchPlus } from '@/utils';
-import type { Show } from '@/types';
+import type { SearchResult } from '@/types';
 
 const inputRef = ref<HTMLInputElement>();
 
@@ -17,7 +17,7 @@ const router = useRouter();
 
 const loading = ref(false);
 
-const shows = ref<Show[]>([]);
+const shows = ref<SearchResult[]>([]);
 
 const search = debounce(
    async (q?: string) => {
@@ -37,7 +37,7 @@ watch(
    () => route.query.q,
    q => {
       loading.value = true;
-      search(q);
+      search(q as string);
    },
    {
       immediate: true,
@@ -52,7 +52,7 @@ watch(
          type="search"
          :value="route.query.q"
          @input="
-            e => router.push({ query: { q: e.target.value || undefined } })
+            e => router.push({ query: { q: (e.target as HTMLInputElement).value || undefined } })
          "
          aria-label="Search: "
          placeholder="Type part of a title..."
