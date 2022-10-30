@@ -12,7 +12,7 @@ You can visit the search page via clicking the search icon (of course :))).
     - [CSS Nesting](https://www.w3.org/TR/css-nesting-1/) pollyfilled with postcss.
     - Vue SFC's `script setup`
     - Vue experimental `Suspense` and top level `await`
-    - Modern front-end tooling: Vite, Vitest, TailwindCSS, TypeScrip, Testing Library
+    - Modern front-end tooling: Vite, Vitest, TailwindCSS, TypeScript, Testing Library
 - Search query is synced with query and it will be debounced.
 - Pages other than index will be lazy loaded on demand.
 - Leverages semantic markup and accessibility hints
