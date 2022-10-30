@@ -14,8 +14,8 @@ export interface Show {
    schedule: Schedule;
    rating: Rating;
    weight: number;
-   network: Network;
-   webChannel: null;
+   network: Network | null;
+   webChannel: Network | null;
    dvdCountry: null;
    externals: Externals;
    image: Image;

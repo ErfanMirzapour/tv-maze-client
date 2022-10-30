@@ -62,7 +62,7 @@ watch(
       />
 
       <template v-if="route.query.q">
-         <span v-if="loading">Loading inside...</span>
+         <span v-if="loading">Loading...</span>
          <span v-else-if="!shows.length">There's no matching for this!</span>
          <ShowList v-else :shows="shows.map(show => show.show)" />
       </template>

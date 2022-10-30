@@ -26,7 +26,7 @@ watch(
 
 <template>
    <main class="static">
-      <span v-if="loading">Loading inside...</span>
+      <span v-if="loading">Loading...</span>
       <ShowList v-else :shows="shows" />
 
       <footer

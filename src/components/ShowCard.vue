@@ -1,32 +1,30 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import type { Show } from '@/types';
 import { computed } from 'vue';
-import { ShowCard } from '.';
+
+import type { Show } from '@/types';
+import { transformYears } from '@/utils';
 
 const props = defineProps<{
    show: Show;
+   solo?: boolean;
 }>();
 
-const years = computed(() => {
-   const premiered = props.show.premiered;
-   const ended = props.show.ended;
-
-   if (!props.show.premiered) return null;
-
-   const getYear = (dateString: string | null) => dateString?.split('-')[0];
-
-   const premieredYear = getYear(premiered);
-   const endedYear = getYear(ended);
-
-   if (premieredYear === endedYear) return premieredYear;
-   return `${premieredYear}–${endedYear || ''}`;
-});
+const years = computed(() =>
+   transformYears(props.show.premiered, props.show.ended),
+);
 </script>
 
 <template>
    <article class="flex">
+      <img
+         v-if="solo"
+         :src="show.image?.medium"
+         alt=""
+         class="h-56 md:h-64 object-cover shrink-0 mr-3 inline-block"
+      />
       <RouterLink
+         v-else
          :to="{ name: 'show', params: { showId: show.id } }"
          class="inline-block mr-3 shrink-0"
       >
@@ -38,14 +36,14 @@ const years = computed(() => {
       </RouterLink>
 
       <div class="flex flex-col space-y-2">
-         <span class="font-bold">{{ show.name }}</span>
+         <span v-if="!solo" class="font-bold">{{ show.name }}</span>
          <span v-if="years">{{ years }}</span>
          <span v-if="show.rating.average" class="text-xs">
             <span class="font-bold text-base">{{ show.rating.average }}</span>
             /10
          </span>
          <span>{{ show.genres.join(', ') }}</span>
-         <span v-if="show.network">Network: {{ show.network.name }}</span>
+         <span v-if="show.network">{{ show.network.name }}</span>
          <div class="!mt-auto flex gap-2">
             <a
                v-if="show.externals.imdb"
